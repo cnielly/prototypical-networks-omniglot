@@ -21,7 +21,7 @@ and two images that are completely different will be far away from each other.
 Here “close” is linked to a distance metric that needs to be defined. We usually take the cosine distance of the Euclidean distance.  
 
 Unlike typical deep learning architecture, prototypical networks do not classify the image directly, and instead learn the mapping of an image in the metric space. 
-To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the few-shot task. Let’s describe in detail an episode:
+To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the few-shot task. Let’s describe in details one episode in training mode:
 
 ### Notations:
 
@@ -29,8 +29,20 @@ In Few-shot classification, we are given a dataset with few images per class. N<
 
 [Image of the matrix representation: one line = one classe, Ns columns of support images, Nq of query images]
 
+### Step 1: embed the images
 
+First, we need to transform the images into vectors. This step is called the embedding, and is performed thanks to an "Image2Vector" model, which is a Convolutional Neural Network (CNN) based architecture.
 
+### Step 2: compute class prototypes
+
+This step is similar to K-means clustering (unsupervised learning) were a cluster is represented by its centroid. 
+The embeddings of the support set images are averaged to form a class prototype.
+
+$c_{k} = sum{} $
+
+S<sub>k</sub> denotes the set of examples labeled with class k.
+
+The prototype of a class can be seen as the representative of the class. 
 
 ## II. The Omniglot Dataset
 
