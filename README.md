@@ -16,7 +16,21 @@ in which images of the same class gather in clusters.
 The main advantage of working in that space is that two images that look the same will be close to each other, 
 and two images that are completely different will be far away from each other. 
 
+[Image of the clusters in the embedding space]
+
 Here “close” is linked to a distance metric that needs to be defined. We usually take the cosine distance of the Euclidean distance.  
+
+Unlike typical deep learning architecture, prototypical networks do not classify the image directly, and instead learn the mapping of an image in the metric space. 
+To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the few-shot task. Let’s describe in detail an episode:
+
+### Notations:
+
+In Few-shot classification, we are given a dataset with few images per class. N<sub>c</sub> classes are randomly picked, and for each class we have two sets of images: the support set (size N<sub>c</sub>) and the query set (size N<sub>q</sub>). 
+
+[Image of the matrix representation: one line = one classe, Ns columns of support images, Nq of query images]
+
+
+
 
 ## II. The Omniglot Dataset
 
