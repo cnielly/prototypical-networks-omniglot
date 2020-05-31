@@ -72,8 +72,15 @@ J(φ) = − log pφ(y = k | x) of the true class k
 | Easy to understand | Lack of generalization |
 | Very "visual" | Only use mean to decide prototypes, and ignore variance in support set |
 | Noise resistant thanks to mean prototypes ||
-| Can be adapted to Zero-Shot setting ||
+| Can be adapted to Zero-shot setting ||
 
 ## II. The Omniglot Dataset
+
+The Omniglot data set is a benchmark dataset in Few-shot Learning. It contains 1,623 different handwritten characters from 50 different alphabets. 
+
+The dataset can be found in [this repository](https://github.com/brendenlake/omniglot/tree/master/python). I used the `images_background.zip` and the `images_evaluation.zip` files.
+
+Then, to increase the number of classes, all the images are rotated by 90, 180 and 270 degrees, with each rotation resulting in an additional class. Hence the total count of classes reached to 6,492(1,623 * 4) classes. We split images of 4,200 classes to training data while the rest went to the test set. For each episode, we trained the model on 5 examples from each of the 64 randomly selected classes. We trained our model for 1 hour and got about 88% accuracy. The official paper claimed to achieve the accuracy of 99.7% after training for a few hours and tuning a few parameters.
+
 
 ## III. Implementation of ProtoNet for Omniglot
