@@ -94,13 +94,34 @@ The model was trained on 5 epochs of 2,000 episods each, and was tested on 1,000
 
 <ins>**RESULTS**</ins>
 
-I tried to reproduced the results of the paper, and this is what I obtained: 
+I tried to reproduced the results of the paper. Training settings: 60 classes, 1 or 5 support points and 5 query points per class. Testing settings: 5-way and 20-way scenarios, same number of support and query points than during training.  
 
-| Pros | Cons |
-| --- | --- |
-| Easy to understand | Lack of generalization |
-| Very "visual" | Only use mean to decide prototypes, and ignore variance in support set |
-| Noise resistant thanks to mean prototypes ||
-| Can be adapted to Zero-shot setting ||
-
+<table>
+  <tr>
+    <td></td>
+    <td colspan="2">5-way</td>
+    <td colspan="2">20-way</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>1-shot</td>
+    <td>5-shot</td>
+    <td>1-shot</td>
+    <td>5-shot</td>
+  </tr>
+  <tr>
+    <td>Obtained</td>
+    <td>One</td>
+    <td>Two</td>
+    <td>One</td>
+    <td>Two</td>
+  </tr>
+  <tr>
+    <td>Paper</td>
+    <td>One</td>
+    <td>Two</td>
+    <td>One</td>
+    <td>Two</td>
+  </tr>
+</table>
 
