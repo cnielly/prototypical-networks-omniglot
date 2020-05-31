@@ -76,11 +76,19 @@ J(φ) = − log pφ(y = k | x) of the true class k
 
 ## II. The Omniglot Dataset
 
-The Omniglot data set is a benchmark dataset in Few-shot Learning. It contains 1,623 different handwritten characters from 50 different alphabets. 
+The Omniglot dataset is a benchmark dataset in Few-shot Learning. It contains 1,623 different handwritten characters from 50 different alphabets. 
 
 The dataset can be found in [this repository](https://github.com/brendenlake/omniglot/tree/master/python). I used the `images_background.zip` and the `images_evaluation.zip` files.
 
-Then, to increase the number of classes, all the images are rotated by 90, 180 and 270 degrees, with each rotation resulting in an additional class. Hence the total count of classes reached to 6,492(1,623 * 4) classes. We split images of 4,200 classes to training data while the rest went to the test set. For each episode, we trained the model on 5 examples from each of the 64 randomly selected classes. We trained our model for 1 hour and got about 88% accuracy. The official paper claimed to achieve the accuracy of 99.7% after training for a few hours and tuning a few parameters.
-
-
 ## III. Implementation of ProtoNet for Omniglot
+
+As suggested in the official paper, to increase the number of classes, all the images are rotated by 90, 180 and 270 degrees. Each rotation resulting in an additional class, so the total number of classes is now 6,492 (1,623 * 4). The training set contains images of 4,200 classes while the test set contains images of 2,292 classes.
+
+The embedding part takes a (28x28x3) image and returns a column vector of length 64. The image2vector function is composed of 4 CNN blocks. As shown in the above image, each block consists of :
+- A CNN layer 
+- A batch normalization
+- A ReLu activation function
+- A 2x2 max pooling layer. 
+
+
+For each episode, we trained the model on 5 examples from each of the 64 randomly selected classes. We trained our model for 1 hour and got about 88% accuracy. The official paper claimed to achieve the accuracy of 99.7% after training for a few hours and tuning a few parameters.
