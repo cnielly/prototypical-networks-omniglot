@@ -82,9 +82,9 @@ The dataset can be found in [this repository](https://github.com/brendenlake/omn
 
 ## III. Implementation of ProtoNet for Omniglot
 
-As suggested in the official paper, to increase the number of classes, all the images are rotated by 90, 180 and 270 degrees. Each rotation resulting in an additional class, so the total number of classes is now 6,492 (1,623 * 4). The training set contains images of 4,200 classes while the test set contains images of 2,292 classes.
+As suggested in the official paper, to increase the number of classes, **all the images are rotated by 90, 180 and 270 degrees**. Each rotation resulting in an additional class, so the total number of classes is now 6,492 (1,623 * 4). The training set contains images of 4,200 classes while the test set contains images of 2,292 classes.
 
-The embedding part takes a (28x28x3) image and returns a column vector of length 64. The image2vector function is composed of 4 convolutional blocks. As shown in the above image, each block consists of :
+The embedding part takes a (28x28x3) image and returns a column vector of length 64. The image2vector function is composed of **4 convolutional blocks**. As shown in the above image, each block consists of :
 - A CNN layer 
 - A batch normalization
 - A ReLu activation function
@@ -93,6 +93,14 @@ The embedding part takes a (28x28x3) image and returns a column vector of length
 [Image showing the architecture of the convolutional block]
 
 
-The chosen optimizer is Adam. The initial learning rate is 10<sup>−3</sup>, and is cut in half every 2000 episodes.
+The chosen optimizer is **Adam**. The initial learning rate of 10<sup>−3</sup>, is cut in half at every epoch.
 
-For each episode, we trained the model on 5 examples from each of the 64 randomly selected classes. We trained our model for 1 hour and got about 88% accuracy. The official paper claimed to achieve the accuracy of 99.7% after training for a few hours and tuning a few parameters.
+The model was trained on 5 epochs of 2,000 episods each, and was tested on 1,000 episodes. 
+
+<ins>**RESULTS**</ins>
+
+I tried to reproduced the results of the paper, and this is what I obtained: 
+
+
+
+
