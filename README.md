@@ -44,19 +44,27 @@ S<sub>k</sub> denotes the set of examples labeled with class k.
 
 The prototype of a class can be seen as the representative of the class. 
 
-<ins>**Step 3: compute distance between queries and prototypes **</ins>
+<ins>**Step 3: compute distance between queries and prototypes**</ins>
 
 This step consists in classifying the query images. To do so, we compute the distance between the images and the prototypes. Metric choice is crucial, and the inventors of Prototypical Networks must be credited to their choice of distance metric. They noticed that their algorithm and Matching Networks both perform better using Euclidean distance than when using cosine distance. 
 
 [Put formulas of cosine and euclidean distances.]
 
-Once distances are computed, a softmax is performed to get a probability on each component, and a sum equal to 1.
+Once distances are computed, a softmax is performed over distances to the prototypes in the embedding space, to get probabilities. 
 
-<ins>**Step 4: classify queries **</ins>
+[Put formula of probabilty]
 
-<ins>**Step 5: compute the loss and backpropagate **</ins>
+<ins>**Step 4: classify queries**</ins>
 
-Only in training mode. 
+The class with higher probability is the class assigned to the query image. 
+
+<ins>**Step 5: compute the loss and backpropagate**</ins>
+
+Only in training mode. Prototypical Networks use log-softmax loss, which is nothing but log over softmax loss. The log-softmax has the effect of heavily penalizing the model when it fails to predict the correct class, which is what we need.
+
+J(φ) = − log pφ(y = k | x) of the true class k
+
+The backpropagation is performed via Stochastic Gradient Descent. 
 
 ## II. The Omniglot Dataset
 
