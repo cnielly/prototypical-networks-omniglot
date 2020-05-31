@@ -23,17 +23,17 @@ Here “close” is linked to a distance metric that needs to be defined. We usu
 Unlike typical deep learning architecture, prototypical networks do not classify the image directly, and instead learn the mapping of an image in the metric space. 
 To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the few-shot task. Let’s describe in details one episode in training mode:
 
-### Notations:
+<ins>**Notations:**</ins>
 
 In Few-shot classification, we are given a dataset with few images per class. N<sub>c</sub> classes are randomly picked, and for each class we have two sets of images: the support set (size N<sub>c</sub>) and the query set (size N<sub>q</sub>). 
 
 [Image of the matrix representation: one line = one classe, Ns columns of support images, Nq of query images]
 
-### Step 1: embed the images
+<ins>**Step 1: embed the images**</ins>
 
 First, we need to transform the images into vectors. This step is called the embedding, and is performed thanks to an "Image2Vector" model, which is a Convolutional Neural Network (CNN) based architecture.
 
-### Step 2: compute class prototypes
+<ins>**Step 2: compute class prototypes**</ins>
 
 This step is similar to K-means clustering (unsupervised learning) were a cluster is represented by its centroid. 
 The embeddings of the support set images are averaged to form a class prototype.
@@ -44,11 +44,17 @@ S<sub>k</sub> denotes the set of examples labeled with class k.
 
 The prototype of a class can be seen as the representative of the class. 
 
-### Step 3: compute distance between queries and prototypes
+<ins>**Step 3: compute distance between queries and prototypes **</ins>
 
-### Step 4: classify queries
+This step consists in classifying the query images. To do so, we compute the distance between the images and the prototypes. Metric choice is crucial, and the inventors of Prototypical Networks must be credited to their choice of distance metric. They noticed that their algorithm and Matching Networks both perform better using Euclidean distance than when using cosine distance. 
 
-### Step 5: compute the loss and backpropagate
+[Put formulas of cosine and euclidean distances.]
+
+Once distances are computed, a softmax is performed to get a probability on each component, and a sum equal to 1.
+
+<ins>**Step 4: classify queries **</ins>
+
+<ins>**Step 5: compute the loss and backpropagate **</ins>
 
 Only in training mode. 
 
