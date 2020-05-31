@@ -64,7 +64,15 @@ Only in training mode. Prototypical Networks use log-softmax loss, which is noth
 
 J(φ) = − log pφ(y = k | x) of the true class k
 
-The backpropagation is performed via Stochastic Gradient Descent. 
+<ins>**Pros and Cons of Prototypical Networks**</ins>
+
+
+| Pros | Cons |
+| --- | --- |
+| Easy to understand | Lack of generalization |
+| Very "visual" | Only use mean to decide prototypes, and ignore variance in support set |
+| Noise resistant thanks to mean prototypes ||
+| Can be adapted to Zero-Shot setting ||
 
 ## II. The Omniglot Dataset
 
