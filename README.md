@@ -8,20 +8,20 @@ They started from a pre-existing architecture called **Matching Networks** intro
 They are both part of a broader familly of algorithms called **Metric Learning Algorithms**, 
 and the success of these networks is based on their capacity to understand the similarity relationship among samples.
 
-"Our approach, prototypical networks, is based on the idea that there exists an embedding in which points cluster around a single prototype 
-representation for each class." (from the original paper *Prototypical Networks for Few-shot Learning*) 
+"Our approach is based on the idea that there exists an embedding in which points cluster around a single prototype 
+representation for each class." claim the authors of the original paper *Prototypical Networks for Few-shot Learning*) 
 
-In other words, there exists a mathematical representation of the images, called the **embedding space**, 
+In other words, there exists a Mathematical representation of the images, called the **embedding space**, 
 in which images of the same class gather in clusters. 
 The main advantage of working in that space is that two images that look the same will be close to each other, 
 and two images that are completely different will be far away from each other. 
 
 [Image of the clusters in the embedding space]
 
-Here “close” is linked to a distance metric that needs to be defined. We usually take the cosine distance of the Euclidean distance.  
+Here the term "close" refers to a distance metric that needs to be defined. The cosine distance or the Euclidean distance are usually taken. 
 
-Unlike typical deep learning architecture, prototypical networks do not classify the image directly, and instead learn the mapping of an image in the metric space. 
-To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the few-shot task. Let’s describe in details one episode in training mode:
+Unlike typical Deep Learning architecture, Prototypical Networks do not classify the image directly, and instead learn its mapping in the embedding space. 
+To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the Few-shot task. Let’s describe in details one episode in training mode:
 
 <ins>**Notations:**</ins>
 
@@ -41,8 +41,6 @@ The embeddings of the support set images are averaged to form a class prototype.
 [LateX formula v_k = sum(x_i in Sk, f_theta(x_i)]
 
 S<sub>k</sub> denotes the set of examples labeled with class k.
-
-The prototype of a class can be seen as the representative of the class. 
 
 <ins>**Step 3: compute distance between queries and prototypes**</ins>
 
@@ -66,7 +64,6 @@ J(φ) = − log pφ(y = k | x) of the true class k
 
 <ins>**Pros and Cons of Prototypical Networks**</ins>
 
-
 | Pros | Cons |
 | --- | --- |
 | Easy to understand | Lack of generalization |
@@ -77,7 +74,6 @@ J(φ) = − log pφ(y = k | x) of the true class k
 ## II. The Omniglot Dataset
 
 The Omniglot dataset is a benchmark dataset in Few-shot Learning. It contains 1,623 different handwritten characters from 50 different alphabets. 
-
 The dataset can be found in [this repository](https://github.com/brendenlake/omniglot/tree/master/python). I used the `images_background.zip` and the `images_evaluation.zip` files.
 
 ## III. Implementation of ProtoNet for Omniglot
@@ -92,7 +88,6 @@ The embedding part takes a (28x28x3) image and returns a column vector of length
 
 [Image showing the architecture of the convolutional block]
 
-
 The chosen optimizer is **Adam**. The initial learning rate of 10<sup>−3</sup>, is cut in half at every epoch.
 
 The model was trained on 5 epochs of 2,000 episods each, and was tested on 1,000 episodes. 
@@ -101,6 +96,11 @@ The model was trained on 5 epochs of 2,000 episods each, and was tested on 1,000
 
 I tried to reproduced the results of the paper, and this is what I obtained: 
 
-
+| Pros | Cons |
+| --- | --- |
+| Easy to understand | Lack of generalization |
+| Very "visual" | Only use mean to decide prototypes, and ignore variance in support set |
+| Noise resistant thanks to mean prototypes ||
+| Can be adapted to Zero-shot setting ||
 
 
