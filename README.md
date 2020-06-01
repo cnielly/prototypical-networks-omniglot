@@ -16,7 +16,7 @@ in which images of the same class gather in clusters.
 The main advantage of working in that space is that two images that look the same will be close to each other, 
 and two images that are completely different will be far away from each other. 
 
-[Image of the clusters in the embedding space]
+![Clusters in the embedding space](http://url/to/img.png)
 
 Here the term "close" refers to a distance metric that needs to be defined. The cosine distance or the Euclidean distance are usually taken. 
 
@@ -27,7 +27,7 @@ To do so, the algorithm does several “loops” called **episodes**. Each episo
 
 In Few-shot classification, we are given a dataset with few images per class. N<sub>c</sub> classes are randomly picked, and for each class we have two sets of images: the support set (size N<sub>c</sub>) and the query set (size N<sub>q</sub>). 
 
-[Image of the matrix representation: one line = one classe, Ns columns of support images, Nq of query images]
+![Representation of one sample](http://url/to/img.png)
 
 <ins>**Step 1: embed the images**</ins>
 
@@ -88,8 +88,8 @@ The dataset can be found in [this repository](https://github.com/brendenlake/omn
 
 As suggested in the official paper, to increase the number of classes, **all the images are rotated by 90, 180 and 270 degrees**. Each rotation resulting in an additional class, so the total number of classes is now 6,492 (1,623 * 4). The training set contains images of 4,200 classes while the test set contains images of 2,292 classes.
 
-The embedding part takes a (28x28x3) image and returns a column vector of length 64. The image2vector function is composed of **4 convolutional blocks**. As shown in the above image, each block consists of :
-- A CNN layer 
+The embedding part takes a (28x28x3) image and returns a column vector of length 64. The image2vector function is composed of **4 modules**. As shown in the above image, each module consists of :
+- A convolutional layer
 - A batch normalization
 - A ReLu activation function
 - A 2x2 max pooling layer. 
