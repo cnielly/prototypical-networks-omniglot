@@ -48,7 +48,9 @@ v<sup>(k)</sup> is the prototype of class k.
 
 This step consists in classifying the query images. To do so, we compute the distance between the images and the prototypes. Metric choice is crucial, and the inventors of Prototypical Networks must be credited to their choice of distance metric. They noticed that their algorithm and Matching Networks both perform better using Euclidean distance than when using cosine distance. 
 
-[Put formulas of cosine and euclidean distances.]
+<p align="center">
+<img src="https://latex.codecogs.com/png.latex?\large&space;d\_cos(v,&space;q)&space;=&space;\frac{v\cdot&space;q}{\left&space;\|&space;v&space;\right&space;\|\left&space;\|&space;q&space;\right&space;\|}&space;=&space;\frac{\sum&space;v_iq_i}{\sqrt{\sum&space;v_i^2}&space;\sqrt{\sum&space;q_i^2}}" title="\large d\_cos(v, q) = \frac{v\cdot q}{\left \| v \right \|\left \| q \right \|} = \frac{\sum v_iq_i}{\sqrt{\sum v_i^2} \sqrt{\sum q_i^2}}" />
+ </p>
 
 Once distances are computed, a softmax is performed over distances to the prototypes in the embedding space, to get probabilities. 
 
