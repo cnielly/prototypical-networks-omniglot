@@ -54,7 +54,9 @@ Cosine distance             |  Euclidean distance
 
 Once distances are computed, a softmax is performed over distances to the prototypes in the embedding space, to get probabilities. 
 
-[Put formula of probabilty]
+<p align="center">
+<img src="https://latex.codecogs.com/png.latex?\large&space;p_\Phi(y=k|x)=\frac{exp[-d(f_\Phi(x),v^{(k)})]}{\sum_{k'=1}^{N_c}&space;exp[-d(f_\Phi(x),v^{(k')})]}" title="\large p_\Phi(y=k|x)=\frac{exp[-d(f_\Phi(x),v^{(k)})]}{\sum_{k'=1}^{N_c} exp[-d(f_\Phi(x),v^{(k')})]}" />
+</p>
 
 <ins>**Step 4: classify queries**</ins>
 
@@ -64,7 +66,9 @@ The class with higher probability is the class assigned to the query image.
 
 Only in training mode. Prototypical Networks use log-softmax loss, which is nothing but log over softmax loss. The log-softmax has the effect of heavily penalizing the model when it fails to predict the correct class, which is what we need.
 
-J(φ) = − log pφ(y = k | x) of the true class k
+<p align="center">
+<img src="https://latex.codecogs.com/png.latex?\large&space;J(\Phi)&space;=&space;-log(p_\Phi(y=k|x))\;of\;the\;true\;class\;k" title="\large J(\Phi) = -log(p_\Phi(y=k|x))\;of\;the\;true\;class\;k" />
+</p>
 
 <ins>**Pros and Cons of Prototypical Networks**</ins>
 
