@@ -100,7 +100,7 @@ The embedding part takes a (28x28x3) image and returns a column vector of length
 
 The chosen optimizer is **Adam**. The initial learning rate of 10<sup>−3</sup>, is cut in half at every epoch.
 
-The model was trained on 5 epochs of 2,000 episods each and was tested on 1,000 episodes. 
+The model was trained on 5 epochs of 2,000 episods each and was tested on 1,000 episodes. A new sample was randmoly picked in the training set at each episode. 
 
 <ins>**RESULTS**</ins>
 
@@ -123,9 +123,9 @@ Testing settings: 5-way and 20-way scenarios, same number of support and query p
   </tr>
   <tr>
     <td>Obtained</td>
-    <td>One</td>
+    <td>99.08%</td>
     <td>Two</td>
-    <td>One</td>
+    <td>97.3%</td>
     <td>Two</td>
   </tr>
   <tr>
