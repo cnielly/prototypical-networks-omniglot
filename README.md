@@ -104,7 +104,9 @@ The model was trained on 5 epochs of 2,000 episods each and was tested on 1,000 
 
 <ins>**RESULTS**</ins>
 
-I tried to reproduced the results of the paper. Training settings: 60 classes, 1 or 5 support points and 5 query points per class. Testing settings: 5-way and 20-way scenarios, same number of support and query points than during training.  
+I tried to reproduced the results of the paper.\
+Training settings: 60 classes, 1 or 5 support points and 5 query points per class.\
+Testing settings: 5-way and 20-way scenarios, same number of support and query points than during training.  
 
 <table>
   <tr>
