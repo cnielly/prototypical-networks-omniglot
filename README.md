@@ -124,9 +124,9 @@ Testing settings: 5-way and 20-way scenarios, same number of support and query p
   <tr>
     <td>Obtained</td>
     <td>99.08%</td>
-    <td>Two</td>
+    <td>99.8%</td>
     <td>97.3%</td>
-    <td>Two</td>
+    <td>99.2%</td>
   </tr>
   <tr>
     <td>Paper</td>
