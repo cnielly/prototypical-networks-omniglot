@@ -137,3 +137,4 @@ Testing settings: 5-way and 20-way scenarios, same number of support and query p
   </tr>
 </table>
 
+Surprisingly, I obtain better results than the original paper. This may be due the the sampling strategy, not precised in the paper. I used random sampling at each episode. 
