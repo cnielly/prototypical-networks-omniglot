@@ -98,7 +98,7 @@ The embedding part takes a (28x28x3) image and returns a column vector of length
 
 The chosen optimizer is **Adam**. The initial learning rate of 10<sup>−3</sup>, is cut in half at every epoch.
 
-The model was trained on 5 epochs of 2,000 episods each, and was tested on 1,000 episodes. 
+The model was trained on 5 epochs of 2,000 episods each and was tested on 1,000 episodes. 
 
 <ins>**RESULTS**</ins>
 
@@ -107,8 +107,8 @@ I tried to reproduced the results of the paper. Training settings: 60 classes, 1
 <table>
   <tr>
     <td></td>
-    <td colspan="2">5-way</td>
-    <td colspan="2">20-way</td>
+    <td colspan="2" align="center">5-way</td>
+    <td colspan="2" align="center">20-way</td>
   </tr>
   <tr>
     <td></td>
@@ -126,10 +126,10 @@ I tried to reproduced the results of the paper. Training settings: 60 classes, 1
   </tr>
   <tr>
     <td>Paper</td>
-    <td>One</td>
-    <td>Two</td>
-    <td>One</td>
-    <td>Two</td>
+    <td>98.8%</td>
+    <td>99.7%</td>
+    <td>96.0%</td>
+    <td>98.9%</td>
   </tr>
 </table>
 
