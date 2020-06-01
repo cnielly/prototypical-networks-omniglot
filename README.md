@@ -25,7 +25,7 @@ To do so, the algorithm does several “loops” called **episodes**. Each episo
 
 <ins>**Notations:**</ins>
 
-In Few-shot classification, we are given a dataset with few images per class. N<sub>c</sub> classes are randomly picked, and for each class we have two sets of images: the support set (size N<sub>c</sub>) and the query set (size N<sub>q</sub>). 
+In Few-shot classification, we are given a dataset with few images per class. N<sub>c</sub> classes are randomly picked, and for each class we have two sets of images: the support set (size N<sub>s</sub>) and the query set (size N<sub>q</sub>). 
 
 ![Representation of one sample](https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/sample_representation.JPG)
 
