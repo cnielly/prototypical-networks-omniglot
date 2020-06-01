@@ -16,7 +16,7 @@ in which images of the same class gather in clusters.
 The main advantage of working in that space is that two images that look the same will be close to each other, 
 and two images that are completely different will be far away from each other. 
 
-![Clusters in the embedding space](https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/prototypes.JPG)
+![Clusters in the embedding space](https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/prototypes_1.JPG)
 
 Here the term "close" refers to a distance metric that needs to be defined. The cosine distance or the Euclidean distance are usually taken. 
 
@@ -94,7 +94,7 @@ The embedding part takes a (28x28x3) image and returns a column vector of length
 - A ReLu activation function
 - A 2x2 max pooling layer. 
 
-![Embedding CNNs](https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/embedding_CNN.JPG)
+![Embedding CNNs](https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/embedding_CNN_1.JPG)
 
 The chosen optimizer is **Adam**. The initial learning rate of 10<sup>−3</sup>, is cut in half at every epoch.
 
