@@ -94,7 +94,7 @@ The embedding part takes a (28x28x3) image and returns a column vector of length
 - A ReLu activation function
 - A 2x2 max pooling layer. 
 
-[Image showing the architecture of the convolutional block]
+![Embedding CNNs](https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/embedding_CNN.JPG)
 
 The chosen optimizer is **Adam**. The initial learning rate of 10<sup>−3</sup>, is cut in half at every epoch.
 
