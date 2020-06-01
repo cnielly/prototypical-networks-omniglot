@@ -38,9 +38,11 @@ First, we need to transform the images into vectors. This step is called the emb
 This step is similar to K-means clustering (unsupervised learning) were a cluster is represented by its centroid. 
 The embeddings of the support set images are averaged to form a class prototype.
 
-[LateX formula v_k = sum(x_i in Sk, f_theta(x_i)]
+<p align="center">
+<img src="https://latex.codecogs.com/png.latex?\large&space;v^{(k)}&space;=&space;\frac{1}{N_{s}}&space;\sum_{i=1}^{N_{s}}&space;f_{\Phi&space;}(x_{i}^{(k)})" title="\LARGE v^{(k)} = \frac{1}{N_{s}} \sum_{i=1}^{N_{s}} f_{\Phi }(x_{i}^{(k)})" />
+</p>
 
-S<sub>k</sub> denotes the set of examples labeled with class k.
+v<sup>(k)</sup> is the prototype of class k.
 
 <ins>**Step 3: compute distance between queries and prototypes**</ins>
 
