@@ -5,7 +5,7 @@ An implementation of "Prototypical Networks for Few-shot Learning" on a notebook
 
 **Prototypical Networks** were introduced by Snell et al. in 2017 (https://arxiv.org/abs/1703.05175). 
 They started from a pre-existing architecture called **Matching Networks** introduced in a previous paper (https://arxiv.org/abs/1606.04080).
-They are both part of a broader familly of algorithms called **Metric Learning Algorithms**, 
+They are both part of a broader family of algorithms called **Metric Learning Algorithms**, 
 and the success of these networks is based on their capacity to understand the similarity relationship among samples.
 
 "Our approach is based on the idea that there exists an embedding in which points cluster around a single prototype 
@@ -37,7 +37,7 @@ First, we need to transform the images into vectors. This step is called the emb
 
 <ins>**Step 2: compute class prototypes**</ins>
 
-This step is similar to K-means clustering (unsupervised learning) were a cluster is represented by its centroid. 
+This step is similar to K-means clustering (unsupervised learning) where a cluster is represented by its centroid. 
 The embeddings of the support set images are averaged to form a class prototype.
 
 <p align="center">
@@ -100,11 +100,11 @@ The embedding part takes a (28x28x3) image and returns a column vector of length
 
 The chosen optimizer is **Adam**. The initial learning rate of 10<sup>−3</sup>, is cut in half at every epoch.
 
-The model was trained on 5 epochs of 2,000 episods each and was tested on 1,000 episodes. A new sample was randmoly picked in the training set at each episode. 
+The model was trained on 5 epochs of 2,000 episodes each and was tested on 1,000 episodes. A new sample was randomly picked in the training set at each episode. 
 
 <ins>**RESULTS**</ins>
 
-I tried to reproduced the results of the paper.\
+I tried to reproduce the results of the paper.\
 Training settings: 60 classes, 1 or 5 support points and 5 query points per class.\
 Testing settings: 5-way and 20-way scenarios, same number of support and query points than during training.  
 
@@ -137,4 +137,4 @@ Testing settings: 5-way and 20-way scenarios, same number of support and query p
   </tr>
 </table>
 
-Surprisingly, I obtain better results than the original paper. This may be due the the sampling strategy, not precised in the paper. I used random sampling at each episode. 
+Surprisingly, I obtained results that are slightly better than the original paper. This may be due to the sampling strategy, which is not specified in the paper. I used random sampling at each episode. 
