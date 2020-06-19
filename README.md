@@ -23,7 +23,7 @@ and two images that are completely different will be far away from each other.
 Here the term "close" refers to a distance metric that needs to be defined. The cosine distance or the Euclidean distance are usually taken. 
 
 Unlike typical Deep Learning architecture, Prototypical Networks do not classify the image directly, and instead learn its mapping in the embedding space. 
-To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the Few-shot task. Let’s describe in details one episode in training mode:
+To do so, the algorithm does several “loops” called **episodes**. Each episode is designed to mimic the Few-shot task. Let’s describe in detail one episode in training mode:
 
 <ins>**Notations:**</ins>
 
