@@ -123,9 +123,9 @@ Testing settings: 5-way and 20-way scenarios, same number of support and query p
   </tr>
   <tr>
     <td>Obtained</td>
-    <td>99.08%</td>
+    <td>98.8%</td>
     <td>99.8%</td>
-    <td>97.3%</td>
+    <td>96.1%</td>
     <td>99.2%</td>
   </tr>
   <tr>
@@ -137,4 +137,4 @@ Testing settings: 5-way and 20-way scenarios, same number of support and query p
   </tr>
 </table>
 
-Surprisingly, I obtained results that are slightly better than the original paper. This may be due to the sampling strategy, which is not specified in the paper. I used random sampling at each episode. 
+I obtained similar results than the original paper, slightly better in some cases. This may be due to the sampling strategy which is not specified in the paper. I used random sampling at each episode. 
