@@ -90,7 +90,7 @@ The dataset can be found in [this repository](https://github.com/brendenlake/omn
 
 As suggested in the official paper, to increase the number of classes, **all the images are rotated by 90, 180 and 270 degrees**. Each rotation resulting in an additional class, so the total number of classes is now 6,492 (1,623 * 4). The training set contains images of 4,200 classes while the test set contains images of 2,292 classes.
 
-The embedding part takes a (28x28x3) image and returns a column vector of length 64. The image2vector function is composed of **4 modules**. As shown in the above image, each module consists of :
+The embedding part takes a (28x28x3) image and returns a column vector of length 64. The image2vector function is composed of **4 modules**. Each module consists of :
 - A convolutional layer
 - A batch normalization
 - A ReLu activation function
