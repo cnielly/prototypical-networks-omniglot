@@ -17,7 +17,7 @@ The main advantage of working in that space is that two images that look the sam
 and two images that are completely different will be far away from each other. 
 
 <p align="center">
-<img src="https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/prototypes.jpg" width="500" alt="Clusters in the embedding space">
+<img src="https://github.com/cnielly/prototypical-networks-omniglot/blob/master/readme_images/prototypes_new.jpg" width="500" alt="Clusters in the embedding space">
 </p>
 
 Here the term "close" refers to a distance metric that needs to be defined. The cosine distance or the Euclidean distance are usually taken. 
